@@ -1,4 +1,4 @@
-# RT-01
+RT-01
 enable
 configure terminal       
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
