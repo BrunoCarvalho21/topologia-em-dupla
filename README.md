@@ -1,1 +1,32 @@
-# ATIVIDADE-EM-DUPLA
+# RT-01
+enable
+configure terminal       
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+hostname RT-01
+service password-encryption
+ip domain-name 1rede.local
+username Bruno privilege 15 secret 123
+crypto key generate rsa general-keys modulus 1024
+enable secret BRUNO*enable
+line console 0 
+password BRUNO*console
+login
+login local
+exit 
+interface g0/0 
+ip address 192.168.0.1 255.255.255.0
+no shutdown
+description Porta conectada ao SW-01
+exit    
+interface g0/1  
+ip address 172.16.0.1 255.255.0.0
+no shutdown
+description Porta conectada ao SW-02
+exit   
+line vty 0 15  
+password BRUNO*vty
+transport input ssh
+login
+login local
+end
+wr
