@@ -12,7 +12,7 @@ password BRUNO*console
 login
 login local
 exit   
-ip default-gateway 172.16.0.1 255.255.0.0
+ip default-gateway 172.16.0.1 
 interface vlan 1 
 ip address 172.16.255.254 255.255.0.0
 no shutdown
